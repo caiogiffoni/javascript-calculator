@@ -33,31 +33,41 @@ function App() {
             color="white"
             lineHeight="35px"
           >
-            <Text>5</Text>
+            <Text id="display">5</Text>
             <Box display="flex" gap="0px" flexWrap="wrap">
-              <ButtonCalc w="160px" bgColor="rgb(172, 57, 57)">
+              <ButtonCalc w="160px" bgColor="rgb(172, 57, 57)" id="clear">
                 AC
               </ButtonCalc>
-              <ButtonCalc bgColor="rgb(102, 102, 102)">/</ButtonCalc>
-              <ButtonCalc bgColor="rgb(102, 102, 102)">x</ButtonCalc>
-              <ButtonCalc>7</ButtonCalc>
-              <ButtonCalc>8</ButtonCalc>
-              <ButtonCalc>9</ButtonCalc>
-              <ButtonCalc bgColor="rgb(102, 102, 102)">-</ButtonCalc>
-              <ButtonCalc>4</ButtonCalc>
-              <ButtonCalc>5</ButtonCalc>
-              <ButtonCalc>6</ButtonCalc>
-              <ButtonCalc bgColor="rgb(102, 102, 102)">+</ButtonCalc>
+              <ButtonCalc bgColor="rgb(102, 102, 102)" id="divide">
+                /
+              </ButtonCalc>
+              <ButtonCalc bgColor="rgb(102, 102, 102)" id="multiply">
+                x
+              </ButtonCalc>
+              <ButtonCalc id="seven">7</ButtonCalc>
+              <ButtonCalc id="eight">8</ButtonCalc>
+              <ButtonCalc id="nine">9</ButtonCalc>
+              <ButtonCalc bgColor="rgb(102, 102, 102)" id="subtract">
+                -
+              </ButtonCalc>
+              <ButtonCalc id="four">4</ButtonCalc>
+              <ButtonCalc id="five">5</ButtonCalc>
+              <ButtonCalc id="six">6</ButtonCalc>
+              <ButtonCalc bgColor="rgb(102, 102, 102)" id="add">
+                +
+              </ButtonCalc>
               <Box display="flex">
                 <Box w="75%" display="flex" flexWrap="wrap">
-                  <ButtonCalc>1</ButtonCalc>
-                  <ButtonCalc>2</ButtonCalc>
-                  <ButtonCalc>3</ButtonCalc>
-                  <ButtonCalc w="160px">0</ButtonCalc>
-                  <ButtonCalc>.</ButtonCalc>
+                  <ButtonCalc id="one">1</ButtonCalc>
+                  <ButtonCalc id="two">2</ButtonCalc>
+                  <ButtonCalc id="three">3</ButtonCalc>
+                  <ButtonCalc w="160px" id="zero">
+                    0
+                  </ButtonCalc>
+                  <ButtonCalc id="decimal">.</ButtonCalc>
                 </Box>
                 <Box w="25%">
-                  <ButtonCalc bgColor="rgb(0, 68, 102)" h="130px">
+                  <ButtonCalc bgColor="rgb(0, 68, 102)" h="130px" id="equals">
                     =
                   </ButtonCalc>
                 </Box>

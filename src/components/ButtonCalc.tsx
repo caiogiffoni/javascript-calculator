@@ -5,6 +5,7 @@ interface IButtonCalc {
   bgColor?: string;
   w?: string;
   h?: string;
+  id?: string;
 }
 
 export const ButtonCalc = ({
@@ -12,9 +13,11 @@ export const ButtonCalc = ({
   bgColor = "#4d4d4d",
   w = "80px",
   h = "65px",
+  id,
 }: IButtonCalc) => {
   return (
     <Button
+      id={id}
       bgColor={bgColor}
       w={w}
       h={h}
