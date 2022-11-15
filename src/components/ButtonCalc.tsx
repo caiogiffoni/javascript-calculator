@@ -20,6 +20,12 @@ export const ButtonCalc = ({
       h={h}
       borderRadius="0px"
       outline="1px solid black"
+      _hover={{
+        cursor: "default",
+        color: "black",
+        outline: "0.05em solid grey",
+        zIndex: "3",
+      }}
     >
       {children}
     </Button>

@@ -1,4 +1,4 @@
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { ButtonCalc } from "./components/ButtonCalc";
@@ -13,6 +13,7 @@ function App() {
       display="flex"
       justifyContent="center"
       alignItems="center"
+      flexDirection="column"
     >
       <Box
         w="320px"
@@ -65,6 +66,18 @@ function App() {
           </Box>
         </Box>
       </Box>
+      <Text mt="12px">Coded by</Text>
+      <Text>
+        <Link
+          href="https://www.linkedin.com/in/caiocgfg"
+          color="teal.800"
+          _hover={{
+            textDecoration: "none",
+          }}
+        >
+          Caio Giffoni
+        </Link>
+      </Text>
     </Box>
   );
 }
