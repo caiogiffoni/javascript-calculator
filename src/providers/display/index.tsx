@@ -21,18 +21,37 @@ export const DisplayProvider = ({ children }: any) => {
   const [display, setDisplay] = useState<string | number>("0");
   const { setExpression, expression } = useExpression();
 
-  const addDigit = (btn: string | number) => {
+  const addDigit = (btn: number) => {
     if (Number(display)) {
-      setDisplay(Number(`${display}${btn}`));
+      setDisplay(`${display}${btn}`);
     } else {
       setDisplay(btn);
     }
     setExpression(`${expression}${btn}`);
+    if (expression.split("=").length === 2) {
+      setDisplay(btn);
+      setExpression(btn.toString());
+    }
   };
 
   const addOperation = (btn: string) => {
-    setDisplay(btn);
-    setExpression(`${expression}${btn}`);
+    switch (btn) {
+      case "AC":
+        setDisplay("0");
+        setExpression("");
+        break;
+      case "x":
+        setDisplay("x");
+        setExpression(`${expression}*`);
+        break;
+      case "=":
+        setDisplay(eval(String(expression)));
+        setExpression(`${expression}=${eval(String(expression))}`);
+        break;
+      default:
+        setDisplay(btn);
+        setExpression(`${expression}${btn}`);
+    }
   };
 
   return (

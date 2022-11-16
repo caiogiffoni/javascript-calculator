@@ -47,9 +47,9 @@ function App() {
           >
             <Text id="display">{display}</Text>
             <Box display="flex" gap="0px" flexWrap="wrap">
-              <ButtonNumbers w="160px" bgColor="rgb(172, 57, 57)" id="clear">
+              <ButtonOperation w="160px" bgColor="rgb(172, 57, 57)" id="clear">
                 AC
-              </ButtonNumbers>
+              </ButtonOperation>
               <ButtonOperation bgColor="rgb(102, 102, 102)" id="divide">
                 /
               </ButtonOperation>

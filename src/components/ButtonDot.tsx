@@ -18,12 +18,12 @@ export const ButtonDot = ({
   id,
 }: IButtonDot) => {
   const { display, setDisplay } = useDisplay();
-  const { setExpression } = useExpression();
+  const { setExpression, expression } = useExpression();
 
-  const action = (button: string) => {
+  const action = (btn: string) => {
     if (display.toString().split(".").length === 1) {
-      setDisplay(`${display}${button}`);
-      setExpression(`${display}${button}`);
+      setDisplay(`${display}${btn}`);
+      setExpression(`${expression}${btn}`);
     }
   };
   return (
