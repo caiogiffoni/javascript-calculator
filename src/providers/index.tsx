@@ -8,15 +8,3 @@ export const Providers = ({ children }: any) => {
     </ExpressionProvider>
   );
 };
-
-{
-  /* <DisplayProvider>
-<ExpressionProvider>{children}</ExpressionProvider>;
-</DisplayProvider> */
-}
-
-{
-  /* <ExpressionProvider>
-<DisplayProvider>{children}</DisplayProvider>;
-</ExpressionProvider> */
-}

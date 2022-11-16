@@ -35,22 +35,42 @@ export const DisplayProvider = ({ children }: any) => {
   };
 
   const addOperation = (btn: string) => {
+    const exp = ["+", "x", "*", "/"];
+    let slicedExp = expression;
+    if (expression.slice(-1) == "-" && btn === "-") {
+      return;
+    }
+
+    if (exp.includes(expression.slice(-1)) && exp.includes(btn)) {
+      slicedExp = `${expression.slice(0, -1)}`;
+    } else if (
+      expression.slice(-1) == "-" &&
+      exp.includes(expression.split("").slice(-2)[0]) &&
+      exp.includes(btn)
+    ) {
+      slicedExp = `${expression.slice(0, -2)}`;
+    }
     switch (btn) {
       case "AC":
         setDisplay("0");
         setExpression("");
         break;
       case "x":
-        setDisplay("x");
-        setExpression(`${expression}*`);
+        setDisplay(btn);
+        setExpression(`${slicedExp}*`);
         break;
       case "=":
-        setDisplay(eval(String(expression)));
-        setExpression(`${expression}=${eval(String(expression))}`);
+        setExpression(`${slicedExp}=${eval(String(slicedExp))}`);
+        setDisplay(eval(String(slicedExp)));
         break;
       default:
-        setDisplay(btn);
-        setExpression(`${expression}${btn}`);
+        if (expression.split("=").length === 2) {
+          setDisplay(btn);
+          setExpression(`${display}${btn}`);
+        } else {
+          setDisplay(btn);
+          setExpression(`${slicedExp}${btn}`);
+        }
     }
   };
 

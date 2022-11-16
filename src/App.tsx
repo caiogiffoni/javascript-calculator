@@ -7,14 +7,9 @@ import { useDisplay } from "./providers/display";
 import { useExpression } from "./providers/expression";
 
 function App() {
-  // const [display, setDisplay] = useState("0");
   const { display } = useDisplay();
 
   const { expression } = useExpression();
-
-  // useEffect(() => {}, [display]);
-
-  const setAction = () => {};
 
   return (
     <Box
@@ -36,7 +31,7 @@ function App() {
       >
         <Box minH="20px" color="orange" textAlign="right">
           <Text fontFamily="digital" fontSize="20px" h="30px">
-            {expression != 0 ? expression : ""}
+            {expression != "0" ? expression : ""}
           </Text>
           <Box
             fontSize="29px"
