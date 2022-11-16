@@ -12,7 +12,7 @@ interface IButtonOperation {
 export const ButtonOperation = ({
   children,
   bgColor = "#4d4d4d",
-  w = "80px",
+  w = "25%",
   h = "65px",
   id,
 }: IButtonOperation) => {

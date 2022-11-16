@@ -22,7 +22,7 @@ function App() {
       flexDirection="column"
     >
       <Box
-        w="320px"
+        w={["280px", "320px"]}
         minH="380.5px"
         bgColor="black"
         p="5px"
@@ -42,7 +42,7 @@ function App() {
           >
             <Text id="display">{display}</Text>
             <Box display="flex" gap="0px" flexWrap="wrap">
-              <ButtonOperation w="160px" bgColor="rgb(172, 57, 57)" id="clear">
+              <ButtonOperation w="50%" bgColor="rgb(172, 57, 57)" id="clear">
                 AC
               </ButtonOperation>
               <ButtonOperation bgColor="rgb(102, 102, 102)" id="divide">
@@ -63,12 +63,18 @@ function App() {
               <ButtonOperation bgColor="rgb(102, 102, 102)" id="add">
                 +
               </ButtonOperation>
-              <Box display="flex">
+              <Box display="flex" w="100%">
                 <Box w="75%" display="flex" flexWrap="wrap">
-                  <ButtonNumbers id="one">1</ButtonNumbers>
-                  <ButtonNumbers id="two">2</ButtonNumbers>
-                  <ButtonNumbers id="three">3</ButtonNumbers>
-                  <ButtonNumbers w="160px" id="zero">
+                  <ButtonNumbers id="one" w="33.333%">
+                    1
+                  </ButtonNumbers>
+                  <ButtonNumbers id="two" w="33.333%">
+                    2
+                  </ButtonNumbers>
+                  <ButtonNumbers id="three" w="33.333%">
+                    3
+                  </ButtonNumbers>
+                  <ButtonNumbers w="66.666%" id="zero">
                     0
                   </ButtonNumbers>
                   <ButtonDot id="decimal">.</ButtonDot>
@@ -78,6 +84,7 @@ function App() {
                     bgColor="rgb(0, 68, 102)"
                     h="130px"
                     id="equals"
+                    w="100%"
                   >
                     =
                   </ButtonOperation>

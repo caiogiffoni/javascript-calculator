@@ -13,7 +13,7 @@ interface IButtonDot {
 export const ButtonDot = ({
   children,
   bgColor = "#4d4d4d",
-  w = "80px",
+  w = "33.333%",
   h = "65px",
   id,
 }: IButtonDot) => {
