@@ -1,14 +1,14 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 interface IDisplayContext {
-  display: string;
-  setDisplay: React.Dispatch<React.SetStateAction<string>>;
+  display: number | string;
+  setDisplay: React.Dispatch<React.SetStateAction<any>>;
 }
 
 // criar o context
 export const DisplayContext = createContext<IDisplayContext>({
-  display: "0",
-  setDisplay: () => "",
+  display: 0,
+  setDisplay: () => 0,
 });
 
 // criar o provider

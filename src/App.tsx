@@ -1,6 +1,8 @@
 import { Box, Button, Link, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { ButtonCalc } from "./components/ButtonCalc";
+import { ButtonDot } from "./components/ButtonDot";
+import { ButtonNumbers } from "./components/ButtonNumbers";
+import { ButtonOperation } from "./components/ButtonOperation";
 import { useDisplay } from "./providers/display";
 
 function App() {
@@ -44,41 +46,45 @@ function App() {
           >
             <Text id="display">{display}</Text>
             <Box display="flex" gap="0px" flexWrap="wrap">
-              <ButtonCalc w="160px" bgColor="rgb(172, 57, 57)" id="clear">
+              <ButtonNumbers w="160px" bgColor="rgb(172, 57, 57)" id="clear">
                 AC
-              </ButtonCalc>
-              <ButtonCalc bgColor="rgb(102, 102, 102)" id="divide">
+              </ButtonNumbers>
+              <ButtonOperation bgColor="rgb(102, 102, 102)" id="divide">
                 /
-              </ButtonCalc>
-              <ButtonCalc bgColor="rgb(102, 102, 102)" id="multiply">
+              </ButtonOperation>
+              <ButtonOperation bgColor="rgb(102, 102, 102)" id="multiply">
                 x
-              </ButtonCalc>
-              <ButtonCalc id="seven">7</ButtonCalc>
-              <ButtonCalc id="eight">8</ButtonCalc>
-              <ButtonCalc id="nine">9</ButtonCalc>
-              <ButtonCalc bgColor="rgb(102, 102, 102)" id="subtract">
+              </ButtonOperation>
+              <ButtonNumbers id="seven">7</ButtonNumbers>
+              <ButtonNumbers id="eight">8</ButtonNumbers>
+              <ButtonNumbers id="nine">9</ButtonNumbers>
+              <ButtonOperation bgColor="rgb(102, 102, 102)" id="subtract">
                 -
-              </ButtonCalc>
-              <ButtonCalc id="four">4</ButtonCalc>
-              <ButtonCalc id="five">5</ButtonCalc>
-              <ButtonCalc id="six">6</ButtonCalc>
-              <ButtonCalc bgColor="rgb(102, 102, 102)" id="add">
+              </ButtonOperation>
+              <ButtonNumbers id="four">4</ButtonNumbers>
+              <ButtonNumbers id="five">5</ButtonNumbers>
+              <ButtonNumbers id="six">6</ButtonNumbers>
+              <ButtonOperation bgColor="rgb(102, 102, 102)" id="add">
                 +
-              </ButtonCalc>
+              </ButtonOperation>
               <Box display="flex">
                 <Box w="75%" display="flex" flexWrap="wrap">
-                  <ButtonCalc id="one">1</ButtonCalc>
-                  <ButtonCalc id="two">2</ButtonCalc>
-                  <ButtonCalc id="three">3</ButtonCalc>
-                  <ButtonCalc w="160px" id="zero">
+                  <ButtonNumbers id="one">1</ButtonNumbers>
+                  <ButtonNumbers id="two">2</ButtonNumbers>
+                  <ButtonNumbers id="three">3</ButtonNumbers>
+                  <ButtonNumbers w="160px" id="zero">
                     0
-                  </ButtonCalc>
-                  <ButtonCalc id="decimal">.</ButtonCalc>
+                  </ButtonNumbers>
+                  <ButtonDot id="decimal">.</ButtonDot>
                 </Box>
                 <Box w="25%">
-                  <ButtonCalc bgColor="rgb(0, 68, 102)" h="130px" id="equals">
+                  <ButtonOperation
+                    bgColor="rgb(0, 68, 102)"
+                    h="130px"
+                    id="equals"
+                  >
                     =
-                  </ButtonCalc>
+                  </ButtonOperation>
                 </Box>
               </Box>
             </Box>
