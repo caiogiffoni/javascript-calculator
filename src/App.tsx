@@ -4,12 +4,13 @@ import { ButtonDot } from "./components/ButtonDot";
 import { ButtonNumbers } from "./components/ButtonNumbers";
 import { ButtonOperation } from "./components/ButtonOperation";
 import { useDisplay } from "./providers/display";
+import { useExpression } from "./providers/expression";
 
 function App() {
   // const [display, setDisplay] = useState("0");
   const { display } = useDisplay();
 
-  const [exp, setExp] = useState("");
+  const { expression } = useExpression();
 
   // useEffect(() => {}, [display]);
 
@@ -35,7 +36,7 @@ function App() {
       >
         <Box minH="20px" color="orange" textAlign="right">
           <Text fontFamily="digital" fontSize="20px" h="30px">
-            8*8
+            {expression != 0 ? expression : ""}
           </Text>
           <Box
             fontSize="29px"

@@ -1,5 +1,10 @@
 import { DisplayProvider } from "./display";
+import { ExpressionProvider } from "./expression";
 
 export const Providers = ({ children }: any) => {
-  return <DisplayProvider>{children}</DisplayProvider>;
+  return (
+    <DisplayProvider>
+      <ExpressionProvider>{children}</ExpressionProvider>;
+    </DisplayProvider>
+  );
 };
