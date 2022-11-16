@@ -1,10 +1,10 @@
 import { Box, Button, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import { ButtonCalc } from "./components/ButtonCalc";
-// import './App.css'
 
 function App() {
+
+
   return (
     <Box
       w="100vw"
