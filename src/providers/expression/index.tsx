@@ -8,13 +8,13 @@ interface IExpressionContext {
 
 // criar o context
 export const ExpressionContext = createContext<IExpressionContext>({
-  expression: '0',
+  expression: "0",
   setExpression: () => undefined,
 });
 
 // criar o provider
 export const ExpressionProvider = ({ children }: any) => {
-  const [expression, setExpression] = useState<string>("");
+  const [expression, setExpression] = useState<string>("0");
 
   return (
     <ExpressionContext.Provider value={{ expression, setExpression }}>
