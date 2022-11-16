@@ -1,5 +1,6 @@
 import { Button } from "@chakra-ui/react";
 import { useDisplay } from "../providers/display";
+import { useExpression } from "../providers/expression";
 
 interface IButtonDot {
   children: string;
@@ -17,10 +18,13 @@ export const ButtonDot = ({
   id,
 }: IButtonDot) => {
   const { display, setDisplay } = useDisplay();
+  const { setExpression } = useExpression();
 
   const action = (button: string) => {
-    if (display.toString().split(".").length === 1)
+    if (display.toString().split(".").length === 1) {
       setDisplay(`${display}${button}`);
+      setExpression(`${display}${button}`);
+    }
   };
   return (
     <Button

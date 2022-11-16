@@ -16,7 +16,7 @@ export const ButtonNumbers = ({
   h = "65px",
   id,
 }: IButtonNumbers) => {
-  const { display, setDisplay } = useDisplay();
+  const { display, setDisplay, addDigit } = useDisplay();
   return (
     <Button
       id={id}
@@ -31,7 +31,7 @@ export const ButtonNumbers = ({
         outline: "0.05em solid grey",
         zIndex: "3",
       }}
-      onClick={() => setDisplay(Number(`${display}${children}`))}
+      onClick={() => addDigit(children)}
     >
       {children}
     </Button>

@@ -3,23 +3,24 @@ import { useDisplay } from "../display";
 
 interface IExpressionContext {
   expression: string | number;
-  setExpression: React.Dispatch<React.SetStateAction<any>>;
+  setExpression: React.Dispatch<React.SetStateAction<string | number>>;
 }
 
 // criar o context
 export const ExpressionContext = createContext<IExpressionContext>({
   expression: 0,
-  setExpression: () => 0,
+  setExpression: () => undefined,
 });
 
 // criar o provider
 export const ExpressionProvider = ({ children }: any) => {
-  const [expression, setExpression] = useState("");
-  const { display } = useDisplay();
+  const [expression, setExpression] = useState<string | number>("");
+  // const { display } = useDisplay();
 
-  useEffect(() => {
-    setExpression(display);
-  }, [display]);
+  // useEffect(() => {
+  //   console.log(display);
+  //   setExpression(display);
+  // }, [display]);
 
   return (
     <ExpressionContext.Provider value={{ expression, setExpression }}>

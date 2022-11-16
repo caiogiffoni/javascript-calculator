@@ -16,7 +16,7 @@ export const ButtonOperation = ({
   h = "65px",
   id,
 }: IButtonOperation) => {
-  const { display, setDisplay } = useDisplay();
+  const { addOperation } = useDisplay();
   return (
     <Button
       id={id}
@@ -31,7 +31,7 @@ export const ButtonOperation = ({
         outline: "0.05em solid grey",
         zIndex: "3",
       }}
-      onClick={() => setDisplay(Number(`${display}${children}`))}
+      onClick={() => addOperation(children)}
     >
       {children}
     </Button>
