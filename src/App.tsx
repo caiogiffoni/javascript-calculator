@@ -1,9 +1,17 @@
 import { Box, Button, Link, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ButtonCalc } from "./components/ButtonCalc";
+import { useDisplay } from "./providers/display";
 
 function App() {
+  // const [display, setDisplay] = useState("0");
+  const { display } = useDisplay();
 
+  const [exp, setExp] = useState("");
+
+  // useEffect(() => {}, [display]);
+
+  const setAction = () => {};
 
   return (
     <Box
@@ -32,8 +40,9 @@ function App() {
             textAlign="right"
             color="white"
             lineHeight="35px"
+            minH="30px"
           >
-            <Text id="display">5</Text>
+            <Text id="display">{display}</Text>
             <Box display="flex" gap="0px" flexWrap="wrap">
               <ButtonCalc w="160px" bgColor="rgb(172, 57, 57)" id="clear">
                 AC

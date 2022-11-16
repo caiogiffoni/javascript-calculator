@@ -1,4 +1,5 @@
 import { Button } from "@chakra-ui/react";
+import { useDisplay } from "../providers/display";
 
 interface IButtonCalc {
   children: string;
@@ -15,6 +16,7 @@ export const ButtonCalc = ({
   h = "65px",
   id,
 }: IButtonCalc) => {
+  const { display, setDisplay } = useDisplay();
   return (
     <Button
       id={id}
@@ -29,6 +31,7 @@ export const ButtonCalc = ({
         outline: "0.05em solid grey",
         zIndex: "3",
       }}
+      onClick={() => setDisplay(`${display}${children}`)}
     >
       {children}
     </Button>
