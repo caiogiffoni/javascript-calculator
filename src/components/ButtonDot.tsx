@@ -21,10 +21,22 @@ export const ButtonDot = ({
   const { setExpression, expression } = useExpression();
 
   const action = (btn: string) => {
-    if (display.toString().split(".").length === 1) {
-      setDisplay(`${display}${btn}`);
-      setExpression(`${expression}${btn}`);
+    const exp = ["+", "x", "/", "-"];
+    if (expression.includes("=")) {
+      setDisplay(`0${btn}`);
+      setExpression(`0${btn}`);
+      return;
     }
+    if (display.toString().split(".").length > 1) {
+      return;
+    }
+    if (exp.includes(display.toString())) {
+      setDisplay(`0${btn}`);
+      setExpression(`${expression}0${btn}`);
+      return;
+    }
+    setDisplay(`${display}${btn}`);
+    setExpression(`${expression}${btn}`);
   };
   return (
     <Button

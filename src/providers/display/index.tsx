@@ -22,7 +22,7 @@ export const DisplayProvider = ({ children }: any) => {
   const { setExpression, expression } = useExpression();
 
   const addDigit = (btn: number) => {
-    if (Number(display)) {
+    if (Number(display) || display.toString().includes(".")) {
       setDisplay(`${display}${btn}`);
     } else {
       setDisplay(btn);
@@ -37,9 +37,8 @@ export const DisplayProvider = ({ children }: any) => {
   const addOperation = (btn: string) => {
     const exp = ["+", "x", "*", "/"];
     let slicedExp = expression;
-    if (expression.slice(-1) == "-" && btn === "-") {
-      return;
-    }
+    if (expression.slice(-1) == "-" && btn === "-") return;
+    if ((expression === "" || expression.includes("=")) && btn === "=") return;
 
     if (exp.includes(expression.slice(-1)) && exp.includes(btn)) {
       slicedExp = `${expression.slice(0, -1)}`;
