@@ -9,7 +9,7 @@ Aplicação frontend de uma calculadora
 
 ## 🔨 Implementações
 
-- [X] Calculadora funcoinal
+- [X] Calculadora funcional
 - [X] Todos os testes aprovados
 
 ## 🎨 Layout
@@ -19,7 +19,7 @@ Sem figma para essa aplicação
 ## ✨ Tecnologias
 
 - [X] React
-- [X] Chakra UIja
+- [X] Chakra UI
 - [X] Typescript
 - [X] Vite
 - [X] Context API
