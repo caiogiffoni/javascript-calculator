@@ -35,6 +35,11 @@ export const ButtonDot = ({
       setExpression(`${expression}0${btn}`);
       return;
     }
+    if (expression === "") {
+      setDisplay(`${display}${btn}`);
+      setExpression(`0${btn}`);
+      return;
+    }
     setDisplay(`${display}${btn}`);
     setExpression(`${expression}${btn}`);
   };
