@@ -38,7 +38,14 @@ export const DisplayProvider = ({ children }: any) => {
     const exp = ["+", "x", "*", "/"];
     let slicedExp = expression;
     if (expression.slice(-1) == "-" && btn === "-") return;
-    if ((expression === "" || expression.includes("=")) && btn === "=") return;
+    if (
+      (expression === "" ||
+        expression.includes("=") ||
+        exp.includes(display.toString()) ||
+        display === "-") &&
+      btn === "="
+    )
+      return;
 
     if (exp.includes(expression.slice(-1)) && exp.includes(btn)) {
       slicedExp = `${expression.slice(0, -1)}`;
